@@ -35,7 +35,7 @@ function Header({ theme, toggleTheme, isDark }) {
           {/* Logo */}
           <div className="text-2xl font-bold flex items-center gap-2" style={{ color: 'var(--header-text)' }}>
             <span className="text-3xl">💻</span>
-            <span>DevGuide</span>
+            <span>GuiaDev</span>
           </div>
 
           {/* Desktop Nav + Theme Toggle */}
