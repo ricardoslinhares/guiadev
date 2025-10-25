@@ -20,7 +20,7 @@ export const roadmapPhases = [
         label: 'Consigo usar if/else para tomar decisões no código',
         resources: {
           resourceTitle: 'Curso em Vídeo - Estruturas Condicionais',
-          resourceUrl: 'https://www.youtube.com/watch?v=K10u3XIf1-Q&list=PLHz_AreHm4dmSj0MHol_aoNYCSGFqvfXV',
+          resourceUrl: 'https://www.youtube.com/watch?v=_g05aHdBAEY&list=PLHz_AreHm4dmSj0MHol_aoNYCSGFqvfXV&index=8',
           resourceLanguage: 'PT-BR',
           resourceType: 'video',
         },
@@ -29,7 +29,7 @@ export const roadmapPhases = [
         label: 'Entendo loops (for, while) e quando usar cada um',
         resources: {
           resourceTitle: 'Curso em Vídeo - Estruturas de Repetição',
-          resourceUrl: 'https://www.youtube.com/watch?v=N1W4oUrM_fs&list=PLHz_AreHm4dmSj0MHol_aoNYCSGFqvfXV',
+          resourceUrl: 'https://www.youtube.com/watch?v=U5PnCt58Q68&list=PLHz_AreHm4dmSj0MHol_aoNYCSGFqvfXV&index=10',
           resourceLanguage: 'PT-BR',
           resourceType: 'video',
         },
@@ -38,7 +38,7 @@ export const roadmapPhases = [
         label: 'Sei criar e usar funções básicas',
         resources: {
           resourceTitle: 'Curso em Vídeo - Funções',
-          resourceUrl: 'https://www.youtube.com/watch?v=ezlVqtx_AqQ&list=PLHz_AreHm4dmSj0MHol_aoNYCSGFqvfXV',
+          resourceUrl: 'https://www.youtube.com/watch?v=-nNx7e8GzHQ&list=PLHz_AreHm4dmSj0MHol_aoNYCSGFqvfXV&index=14',
           resourceLanguage: 'PT-BR',
           resourceType: 'video',
         },
@@ -85,14 +85,26 @@ export const roadmapPhases = [
         label: 'Sei trabalhar com listas/arrays e dicionários/objetos',
         resources: [
           {
-            resourceTitle: 'Python: Listas e Dicionários',
-            resourceUrl: 'https://www.youtube.com/watch?v=N1W4oUrM_fs&list=PLHz_AreHm4dlKP6QQCekuIPky1CiwmdI6',
+            resourceTitle: 'Python: Listas',
+            resourceUrl: 'https://www.youtube.com/watch?v=N1hTsbW50eM&list=PLHz_AreHm4dksnH2jVTIVNviIMBVYyFnH&index=8',
             resourceLanguage: 'PT-BR',
             resourceType: 'video',
           },
           {
-            resourceTitle: 'JavaScript: Arrays e Objetos',
-            resourceUrl: 'https://www.youtube.com/watch?v=1-w1RfGIov4&list=PLHz_AreHm4dlsK3Nr9GVvXCbpQyHQl1o1',
+            resourceTitle: 'Python: Dicionários',
+            resourceUrl: 'https://www.youtube.com/watch?v=ZWj8o692qGY&list=PLHz_AreHm4dksnH2jVTIVNviIMBVYyFnH&index=22',
+            resourceLanguage: 'PT-BR',
+            resourceType: 'video',
+          },
+          {
+            resourceTitle: 'JavaScript: Arrays',
+            resourceUrl: 'https://www.youtube.com/watch?v=XdkW62tkAgU&list=PLHz_AreHm4dlsK3Nr9GVvXCbpQyHQl1o1&index=29',
+            resourceLanguage: 'PT-BR',
+            resourceType: 'video',
+          },
+          {
+            resourceTitle: 'JavaScript: Objetos',
+            resourceUrl: 'https://www.youtube.com/watch?v=roP93FA-NgU&list=PLHz_AreHm4dlsK3Nr9GVvXCbpQyHQl1o1&index=34',
             resourceLanguage: 'PT-BR',
             resourceType: 'video',
           },
@@ -203,9 +215,9 @@ export const roadmapPhases = [
       {
         label: 'Projeto tem funcionalidades completas (não é tutorial copiado)',
         resources: {
-          resourceTitle: '50+ Ideias de Projetos',
-          resourceUrl: 'https://www.freecodecamp.org/news/40-free-resources-for-learning-web-development/',
-          resourceLanguage: 'EN',
+          resourceTitle: '40 Ideias de Projetos em Javascript',
+          resourceUrl: 'https://www.freecodecamp.org/portuguese/news/40-projetos-em-javascript-para-iniciantes-ideias-simples-para-comecar-a-programar-em-js/',
+          resourceLanguage: 'PT-BR',
           resourceType: 'article',
         },
       },
@@ -240,8 +252,8 @@ export const roadmapPhases = [
         label: 'Código tem comentários nos pontos importantes',
         resources: {
           resourceTitle: 'Como Comentar Código',
-          resourceUrl: 'https://www.freecodecamp.org/news/how-to-write-better-code-comments/',
-          resourceLanguage: 'EN',
+          resourceUrl: 'https://pt.khanacademy.org/computing/computer-programming/programming/writing-clean-code/pt/clarifying-with-comments',
+          resourceLanguage: 'PT-BR',
           resourceType: 'article',
         },
       },

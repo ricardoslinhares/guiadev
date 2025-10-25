@@ -60,7 +60,7 @@ function Recursos() {
           title: '💻 FreeCodeCamp',
           provider: 'Plataforma interativa completa',
           description: 'Do zero ao avançado. Certificados gratuitos.',
-          url: 'https://www.freecodecamp.org/',
+          url: 'https://www.freecodecamp.org/portuguese/learn/javascript-algorithms-and-data-structures-v8/',
           isFeatured: true,
         },
         {

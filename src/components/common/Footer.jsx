@@ -30,13 +30,13 @@ function Footer() {
             </h4>
             <ul className="space-y-2">
               <li>
-                <a href="https://discord.gg/heartdevs" target="_blank" rel="noopener noreferrer" className="transition" style={{ color: 'rgba(255, 255, 255, 0.7)' }} onMouseEnter={(e) => (e.target.style.color = 'white')} onMouseLeave={(e) => (e.target.style.color = 'rgba(255, 255, 255, 0.7)')}>
+                <a href="https://heartdevs.com/" target="_blank" rel="noopener noreferrer" className="transition" style={{ color: 'rgba(255, 255, 255, 0.7)' }} onMouseEnter={(e) => (e.target.style.color = 'white')} onMouseLeave={(e) => (e.target.style.color = 'rgba(255, 255, 255, 0.7)')}>
                   He4rt Developers
                 </a>
               </li>
               <li>
-                <a href="https://discord.gg/collabcode" target="_blank" rel="noopener noreferrer" className="transition" style={{ color: 'rgba(255, 255, 255, 0.7)' }} onMouseEnter={(e) => (e.target.style.color = 'white')} onMouseLeave={(e) => (e.target.style.color = 'rgba(255, 255, 255, 0.7)')}>
-                  CollabCode
+                <a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer" className="transition" style={{ color: 'rgba(255, 255, 255, 0.7)' }} onMouseEnter={(e) => (e.target.style.color = 'white')} onMouseLeave={(e) => (e.target.style.color = 'rgba(255, 255, 255, 0.7)')}>
+                  freecodecamp
                 </a>
               </li>
               <li>
@@ -64,7 +64,7 @@ function Footer() {
         {/* Bottom */}
         <div className="border-t pt-6 text-center" style={{ borderColor: 'var(--footer-border)' }}>
           <p className="text-sm" style={{ color: 'rgba(255, 255, 255, 0.5)' }}>
-            © 2025 Ricardo Linhares • Licença MIT •
+            © 2025 Ricardo Linhares •
             <a href="#inicio" className="ml-2 transition" style={{ color: 'rgba(255, 255, 255, 0.7)' }} onMouseEnter={(e) => (e.target.style.color = 'white')} onMouseLeave={(e) => (e.target.style.color = 'rgba(255, 255, 255, 0.7)')}>
               Voltar ao topo ↑
             </a>
