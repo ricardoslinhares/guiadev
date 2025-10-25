@@ -1,5 +1,5 @@
 /* ========================================
-   ROADMAP TIMELINE STYLES - DARK THEME FIXED
+   ROADMAP TIMELINE STYLES - MOBILE OPTIMIZED
    Usa CSS Variables do theme.css
    ======================================== */
 
@@ -11,18 +11,20 @@
 .timeline-line::before {
   content: '';
   position: absolute;
-  left: 32px; /* Centraliza na bolinha (w-16 = 64px / 2 = 32px) */
-  top: 80px; /* Começa após a primeira bolinha */
-  bottom: 80px; /* Termina antes da última */
+  left: 32px;
+  top: 80px;
+  bottom: 80px;
   width: 3px;
   background: var(--gradient-timeline);
-  z-index: 0;
+  z-index: -1;
+  display: none; /* Escondida por padrão */
 }
 
-/* Remove a linha no mobile se necessário */
-@media (max-width: 640px) {
+/* DESKTOP: Mostra a linha apenas em telas largas */
+@media (min-width: 768px) {
   .timeline-line::before {
-    left: 28px; /* Ajuste para mobile se necessário */
+    display: block;
+    left: 32px;
   }
 }
 
@@ -134,16 +136,17 @@ a[href]:has(.badge-language):hover {
 
 /* Ajustes para mobile */
 @media (max-width: 768px) {
-  .timeline-line::before {
-    display: none; /* Esconde a linha no mobile para simplificar */
-  }
-
   .checkpoint-visual-group {
     padding: 0.75rem;
   }
 
   .checkpoint-group-wrapper {
     margin-bottom: 0.5rem;
+  }
+
+  /* Reduz espaçamento entre fases no mobile */
+  .mb-12 {
+    margin-bottom: 2rem !important;
   }
 }
 

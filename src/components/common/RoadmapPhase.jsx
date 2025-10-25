@@ -7,6 +7,7 @@ import CheckpointWithLink from './CheckpointWithLink';
  * ✅ CORRIGIDO: Passa a prop 'resources' (não resourceTitle, resourceUrl separados)
  * ✅ ATUALIZADO: Suporta múltiplos recursos por checkpoint
  * ✅ DARK THEME FIXED: Usa CSS variables ao invés de classes Tailwind hardcoded
+ * ✅ MOBILE OPTIMIZED: Layout vertical em telas pequenas, horizontal em telas grandes
  *
  * @param {number} number - Número da fase
  * @param {string} title - Título da fase
@@ -16,15 +17,15 @@ import CheckpointWithLink from './CheckpointWithLink';
  */
 function RoadmapPhase({ number, title, description, checkpoints, project }) {
   return (
-    <div className="mb-12 flex gap-6">
-      {/* Círculo numerado */}
-      <div className="flex-shrink-0">
+    <div className="mb-12 flex flex-col md:flex-row gap-6">
+      {/* Círculo numerado - Centralizado no mobile, à esquerda no desktop */}
+      <div className="flex-shrink-0 flex justify-center md:justify-start">
         <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-600 text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg relative z-10">{number}</div>
       </div>
 
       {/* Conteúdo - USA CSS VARIABLES */}
       <div
-        className="flex-grow rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow"
+        className="flex-grow rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-lg transition-shadow"
         style={{
           backgroundColor: 'var(--bg-secondary)',
         }}
