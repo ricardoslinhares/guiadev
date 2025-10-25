@@ -1,0 +1,336 @@
+/* ========================================
+   SISTEMA DE TEMAS - DARK & LIGHT
+   Versão CORRIGIDA com maior especificidade
+   ======================================== */
+
+/* ========================================
+   DARK THEME (PADRÃO)
+   ======================================== */
+:root.theme-dark,
+html.theme-dark,
+.theme-dark {
+  /* Backgrounds */
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --bg-accent: #1e3a5f;
+  --bg-hover: #475569;
+
+  /* Textos */
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --text-accent: #60a5fa;
+  --text-muted: #64748b;
+
+  /* Cores primárias */
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --primary-light: #60a5fa;
+
+  /* Cores secundárias */
+  --secondary: #8b5cf6;
+  --secondary-hover: #7c3aed;
+  --secondary-light: #a78bfa;
+
+  /* Cores semânticas */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --info: #3b82f6;
+
+  /* Bordas */
+  --border-default: #334155;
+  --border-light: #475569;
+  --border-accent: #3b82f6;
+
+  /* Sombras */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+
+  /* Checkpoint específico */
+  --checkpoint-bg: rgba(59, 130, 246, 0.1);
+  --checkpoint-bg-hover: rgba(59, 130, 246, 0.15);
+  --checkpoint-border: #3b82f6;
+  --checkpoint-border-hover: #60a5fa;
+
+  /* Project box */
+  --project-bg: #292524;
+  --project-border: #f59e0b;
+
+  /* Badges */
+  --badge-ptbr-bg: rgba(16, 185, 129, 0.15);
+  --badge-ptbr-text: #34d399;
+  --badge-ptbr-border: #059669;
+
+  --badge-en-bg: rgba(59, 130, 246, 0.15);
+  --badge-en-text: #60a5fa;
+  --badge-en-border: #2563eb;
+
+  /* Header */
+  --header-bg: rgba(15, 23, 42, 0.95);
+  --header-border: #334155;
+  --header-text: #f1f5f9;
+
+  /* Footer */
+  --footer-bg: #020617;
+  --footer-border: #1e293b;
+
+  /* Gradientes */
+  --gradient-hero: linear-gradient(135deg, #1e3a8a 0%, #6366f1 50%, #8b5cf6 100%);
+  --gradient-timeline: linear-gradient(to bottom, #3b82f6 0%, #8b5cf6 100%);
+}
+
+/* ========================================
+   LIGHT THEME
+   ======================================== */
+:root.theme-light,
+html.theme-light,
+.theme-light {
+  /* Backgrounds */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-tertiary: #f3f4f6;
+  --bg-accent: #eff6ff;
+  --bg-hover: #e5e7eb;
+
+  /* Textos */
+  --text-primary: #111827;
+  --text-secondary: #374151;
+  --text-tertiary: #6b7280;
+  --text-accent: #2563eb;
+  --text-muted: #9ca3af;
+
+  /* Cores primárias */
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-light: #3b82f6;
+
+  /* Cores secundárias */
+  --secondary: #9333ea;
+  --secondary-hover: #7e22ce;
+  --secondary-light: #a855f7;
+
+  /* Cores semânticas */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --info: #2563eb;
+
+  /* Bordas */
+  --border-default: #e5e7eb;
+  --border-light: #f3f4f6;
+  --border-accent: #2563eb;
+
+  /* Sombras */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+
+  /* Checkpoint específico */
+  --checkpoint-bg: #eff6ff;
+  --checkpoint-bg-hover: #dbeafe;
+  --checkpoint-border: #3b82f6;
+  --checkpoint-border-hover: #2563eb;
+
+  /* Project box */
+  --project-bg: #fffbeb;
+  --project-border: #f59e0b;
+
+  /* Badges */
+  --badge-ptbr-bg: #d1fae5;
+  --badge-ptbr-text: #065f46;
+  --badge-ptbr-border: #10b981;
+
+  --badge-en-bg: #dbeafe;
+  --badge-en-text: #1e40af;
+  --badge-en-border: #3b82f6;
+
+  /* Header - ESCURO EM AMBOS OS TEMAS */
+  --header-bg: rgba(17, 24, 39, 0.95);
+  --header-border: #1f2937;
+  --header-text: #f9fafb;
+
+  /* Footer - ESCURO EM AMBOS OS TEMAS */
+  --footer-bg: #111827;
+  --footer-border: #1f2937;
+
+  /* Gradientes */
+  --gradient-hero: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #9333ea 100%);
+  --gradient-timeline: linear-gradient(to bottom, #2563eb 0%, #9333ea 100%);
+}
+
+/* ========================================
+   APLICAÇÃO DAS VARIÁVEIS
+   ======================================== */
+
+/* Body e HTML - IMPORTANTE: vem depois do Tailwind */
+html,
+body {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Scrollbar customizada (dark theme) */
+.theme-dark ::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.theme-dark ::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+.theme-dark ::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border-radius: 6px;
+}
+
+.theme-dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--bg-hover);
+}
+
+/* Scrollbar customizada (light theme) */
+.theme-light ::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.theme-light ::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+.theme-light ::-webkit-scrollbar-thumb {
+  background: var(--border-default);
+  border-radius: 6px;
+}
+
+.theme-light ::-webkit-scrollbar-thumb:hover {
+  background: var(--border-light);
+}
+
+/* ========================================
+   COMPONENTES ESTILIZADOS
+   ======================================== */
+
+/* Cards */
+.card {
+  background-color: var(--bg-secondary);
+  border: 2px solid var(--border-default);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Checkpoint visual group */
+.checkpoint-visual-group {
+  background: var(--checkpoint-bg);
+  border-left: 4px solid var(--checkpoint-border);
+  transition: all 0.2s ease;
+}
+
+.checkpoint-visual-group:hover {
+  background: var(--checkpoint-bg-hover);
+  border-left-color: var(--checkpoint-border-hover);
+}
+
+/* Project box */
+.project-box {
+  background-color: var(--project-bg);
+  border-left: 4px solid var(--project-border);
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-default);
+}
+
+.theme-toggle-btn:hover {
+  background-color: var(--bg-hover);
+  border-color: var(--border-accent);
+}
+
+/* Animação do ícone de tema */
+@keyframes theme-icon {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.animate-theme-icon {
+  animation: theme-icon 0.5s ease-in-out;
+}
+
+/* ========================================
+   TRANSIÇÕES SUAVES
+   ======================================== */
+
+* {
+  transition-property: background-color, border-color, color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+/* Elementos que não devem ter transição */
+input,
+textarea,
+select,
+button:active {
+  transition: none;
+}
+
+/* ========================================
+   UTILITIES
+   ======================================== */
+
+.bg-primary {
+  background-color: var(--bg-primary);
+}
+
+.bg-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.bg-tertiary {
+  background-color: var(--bg-tertiary);
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-tertiary {
+  color: var(--text-tertiary);
+}
+
+.text-accent {
+  color: var(--text-accent);
+}
+
+.border-default {
+  border-color: var(--border-default);
+}
+
+.border-accent {
+  border-color: var(--border-accent);
+}

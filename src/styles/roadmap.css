@@ -1,0 +1,187 @@
+/* ========================================
+   ROADMAP TIMELINE STYLES - DARK THEME FIXED
+   Usa CSS Variables do theme.css
+   ======================================== */
+
+.timeline-line {
+  position: relative;
+}
+
+/* Linha vertical conectando as fases */
+.timeline-line::before {
+  content: '';
+  position: absolute;
+  left: 32px; /* Centraliza na bolinha (w-16 = 64px / 2 = 32px) */
+  top: 80px; /* Começa após a primeira bolinha */
+  bottom: 80px; /* Termina antes da última */
+  width: 3px;
+  background: var(--gradient-timeline);
+  z-index: 0;
+}
+
+/* Remove a linha no mobile se necessário */
+@media (max-width: 640px) {
+  .timeline-line::before {
+    left: 28px; /* Ajuste para mobile se necessário */
+  }
+}
+
+/* ========================================
+   CHECKPOINT VISUAL GROUP - USA CSS VARIABLES
+   ======================================== */
+
+/* Container com background + borda lateral */
+.checkpoint-visual-group {
+  background: var(--checkpoint-bg) !important;
+  border-left: 4px solid var(--checkpoint-border) !important;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover: intensifica o background */
+.checkpoint-visual-group:hover {
+  background: var(--checkpoint-bg-hover) !important;
+  border-left-color: var(--checkpoint-border-hover) !important;
+}
+
+/* Wrapper do grupo (espaçamento entre checkpoints) */
+.checkpoint-group-wrapper {
+  margin-bottom: 0.75rem;
+}
+
+/* ========================================
+   ANIMAÇÕES E INTERAÇÕES
+   ======================================== */
+
+/* Animação suave ao fazer hover nos checkpoints */
+.group\/link:hover {
+  transform: translateX(2px);
+  transition: transform 0.2s ease;
+}
+
+/* Estilos para os badges de idioma */
+.badge-language {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-width: 1px;
+}
+
+/* Destaque visual quando hover no link do recurso */
+a[href]:has(.badge-language):hover {
+  text-decoration: underline;
+  text-decoration-color: var(--primary);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* Animação para o ícone de link externo */
+@keyframes slideRight {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.group\/link:hover .lucide-external-link {
+  animation: slideRight 0.6s ease-in-out;
+}
+
+/* Estilo para o aviso sobre os novos links */
+.info-banner {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   MÚLTIPLOS RECURSOS POR CHECKPOINT
+   ======================================== */
+
+/* Espaçamento entre múltiplos recursos */
+.checkpoint-visual-group .ml-9.space-y-2 > div {
+  padding: 0.25rem 0;
+}
+
+/* Destaque sutil para o segundo recurso (alternativa) */
+.checkpoint-visual-group .ml-9.space-y-2 > div:nth-child(2) {
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--border-default);
+}
+
+/* ========================================
+   RESPONSIVIDADE
+   ======================================== */
+
+/* Ajustes para mobile */
+@media (max-width: 768px) {
+  .timeline-line::before {
+    display: none; /* Esconde a linha no mobile para simplificar */
+  }
+
+  .checkpoint-visual-group {
+    padding: 0.75rem;
+  }
+
+  .checkpoint-group-wrapper {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Ajustes para tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .checkpoint-visual-group {
+    padding: 1rem;
+  }
+}
+
+/* ========================================
+   SCROLLBAR PERSONALIZADA
+   ======================================== */
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ========================================
+   ACESSIBILIDADE
+   ======================================== */
+
+/* Focus visível para navegação por teclado */
+.checkpoint-visual-group:focus-within {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Touch targets adequados no mobile */
+@media (max-width: 768px) {
+  label {
+    min-height: 44px; /* Mínimo recomendado para touch */
+    display: flex;
+    align-items: center;
+  }
+}
