@@ -24,9 +24,8 @@ O **GuiaDev** é um projeto extensionista desenvolvido como parte do curso da IP
 
 Através de pesquisa com a comunidade:
 
-- **62,5%** citaram "excesso de informação" como maior dificuldade
-- **100%** dos respondentes querem um roadmap claro
-- **50%** ainda não começaram a programar por não saber por onde
+- **50%** citaram "excesso de informação" como maior dificuldade e ainda não começaram a programar por não saber por onde começar
+- **37,5%** dos respondentes querem um roadmap claro
 
 ### 💡 Solução
 
