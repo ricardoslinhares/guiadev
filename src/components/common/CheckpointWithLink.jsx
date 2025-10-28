@@ -3,20 +3,30 @@ import { resourceMetadata } from '../../data/roadmapData';
 
 /**
  * Componente de Checkbox com Link para Recurso de Aprendizado
- *
- * ✅ ATUALIZADO: Dark Theme + Background azul (Opção B)
- *
- * @param {string} label - Texto do checkpoint
- * @param {Object|Array} resources - Recurso único (objeto) ou múltiplos recursos (array)
+ * ✅ ATUALIZADO: Checkbox controlado com LocalStorage
  */
-function CheckpointWithLink({ label, resources }) {
-  // Se receber um único recurso como objeto, transforma em array
-  // Se for undefined/null, retorna array vazio
+function CheckpointWithLink({
+  label,
+  resources,
+  phaseNumber, // ✨ NOVO PROP
+  checkpointIndex, // ✨ NOVO PROP
+  checkboxProgress, // ✨ NOVO PROP
+}) {
+  // Normalizar resources para array
   const resourceArray = !resources ? [] : Array.isArray(resources) ? resources : [resources];
+
+  // ✨ NOVO: Obter estado atual do checkbox
+  const isChecked = checkboxProgress?.isCheckpointChecked(phaseNumber, checkpointIndex) || false;
+
+  // ✨ NOVO: Handler para mudança no checkbox
+  const handleCheckboxChange = (e) => {
+    if (checkboxProgress) {
+      checkboxProgress.saveCheckpoint(phaseNumber, checkpointIndex, e.target.checked);
+    }
+  };
 
   return (
     <div className="checkpoint-group-wrapper mb-3">
-      {/* Container com background + borda - OPÇÃO B com Dark Theme */}
       <div
         className="checkpoint-visual-group rounded-lg p-4 transition-all duration-200"
         style={{
@@ -32,18 +42,22 @@ function CheckpointWithLink({ label, resources }) {
           e.currentTarget.style.borderLeftColor = 'var(--checkpoint-border)';
         }}
       >
-        {/* Checkbox Principal */}
+        {/* Checkbox Principal - ✨ AGORA CONTROLADO */}
         <label className="flex items-start gap-3 cursor-pointer group/checkbox mb-3">
-          <input type="checkbox" className="mt-1 w-6 h-6 text-green-600 rounded focus:ring-2 focus:ring-primary flex-shrink-0 cursor-pointer accent-green-600" />
+          <input
+            type="checkbox"
+            className="mt-1 w-6 h-6 text-green-600 rounded focus:ring-2 focus:ring-primary flex-shrink-0 cursor-pointer accent-green-600"
+            checked={isChecked} // ✨ CONTROLADO
+            onChange={handleCheckboxChange} // ✨ HANDLER
+          />
           <span className="leading-relaxed font-medium flex-grow" style={{ color: 'var(--text-primary)' }}>
             {label}
           </span>
         </label>
 
-        {/* Links para Recursos (pode ter múltiplos) */}
+        {/* Links para Recursos */}
         <div className="ml-9 space-y-2">
           {resourceArray.map((resource, index) => {
-            // Validação: se resource for undefined/null, pula
             if (!resource) return null;
 
             const typeMetadata = resourceMetadata.types[resource.resourceType] || resourceMetadata.types.article;
@@ -66,10 +80,7 @@ function CheckpointWithLink({ label, resources }) {
                     e.currentTarget.style.textDecoration = 'none';
                   }}
                 >
-                  {/* Ícone do tipo de recurso */}
                   <span className="text-base">{typeMetadata.icon}</span>
-
-                  {/* Badge de idioma */}
                   <span
                     className="px-2 py-0.5 rounded-full text-xs font-semibold border"
                     style={{
@@ -80,15 +91,9 @@ function CheckpointWithLink({ label, resources }) {
                   >
                     {langMetadata.flag} {resource.resourceLanguage}
                   </span>
-
-                  {/* Título do recurso */}
                   <span className="font-medium">{resource.resourceTitle}</span>
-
-                  {/* Ícone de link externo */}
                   <ExternalLink size={14} className="opacity-0 group-hover/link:opacity-100 transition-opacity" />
                 </a>
-
-                {/* Indicador de tipo de recurso */}
                 <span className="ml-7 text-xs" style={{ color: 'var(--text-tertiary)' }}>
                   {typeMetadata.label}
                 </span>

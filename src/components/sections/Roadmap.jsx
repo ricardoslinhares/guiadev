@@ -1,11 +1,15 @@
 import RoadmapPhase from '../common/RoadmapPhase';
 import { roadmapPhases } from '../../data/roadmapData';
+import { useCheckboxProgress } from '../../hooks/useCheckboxProgress'; // ✨ NOVO IMPORT
 
 /**
  * Componente Roadmap
- * ATUALIZADO: Adicionados IDs para navegação específica por fase
+ * ✅ ATUALIZADO: Integrado com sistema de progresso LocalStorage
  */
 function Roadmap() {
+  // ✨ NOVO: Inicializar hook de progresso
+  const checkboxProgress = useCheckboxProgress();
+
   return (
     <section id="roadmap" className="py-16 md:py-24" style={{ backgroundColor: 'var(--bg-tertiary)' }}>
       <div className="max-w-5xl mx-auto px-6">
@@ -19,11 +23,14 @@ function Roadmap() {
           </p>
         </div>
 
-        {/* Timeline com IDs para navegação */}
+        {/* Timeline com progresso */}
         <div className="relative timeline-line">
           {roadmapPhases.map((phase, index) => (
             <div key={index} id={`fase-${phase.number}`}>
-              <RoadmapPhase {...phase} />
+              <RoadmapPhase
+                {...phase}
+                checkboxProgress={checkboxProgress} // ✨ NOVO: Passar hook
+              />
             </div>
           ))}
         </div>

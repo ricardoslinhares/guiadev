@@ -3,29 +3,26 @@ import CheckpointWithLink from './CheckpointWithLink';
 
 /**
  * Componente de Fase do Roadmap
- *
- * ✅ CORRIGIDO: Passa a prop 'resources' (não resourceTitle, resourceUrl separados)
- * ✅ ATUALIZADO: Suporta múltiplos recursos por checkpoint
- * ✅ DARK THEME FIXED: Usa CSS variables ao invés de classes Tailwind hardcoded
- * ✅ MOBILE OPTIMIZED: Layout vertical em telas pequenas, horizontal em telas grandes
- *
- * @param {number} number - Número da fase
- * @param {string} title - Título da fase
- * @param {string} description - Descrição da fase
- * @param {Array} checkpoints - Array de checkpoints com recursos linkados
- * @param {Object} project - Objeto com informações do projeto prático
+ * ✅ ATUALIZADO: Passa progresso para checkpoints
  */
-function RoadmapPhase({ number, title, description, checkpoints, project }) {
+function RoadmapPhase({
+  number,
+  title,
+  description,
+  checkpoints,
+  project,
+  checkboxProgress, // ✨ NOVO PROP
+}) {
   return (
-    <div className="mb-12 flex flex-col md:flex-row gap-6">
-      {/* Círculo numerado - Centralizado no mobile, à esquerda no desktop */}
-      <div className="flex-shrink-0 flex justify-center md:justify-start">
+    <div className="mb-12 flex gap-6">
+      {/* Círculo numerado */}
+      <div className="flex-shrink-0">
         <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-600 text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg relative z-10">{number}</div>
       </div>
 
-      {/* Conteúdo - USA CSS VARIABLES */}
+      {/* Conteúdo */}
       <div
-        className="flex-grow rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-lg transition-shadow"
+        className="flex-grow rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow"
         style={{
           backgroundColor: 'var(--bg-secondary)',
         }}
@@ -37,18 +34,21 @@ function RoadmapPhase({ number, title, description, checkpoints, project }) {
           {description}
         </p>
 
-        {/* Checkpoints COM LINKS - CORRIGIDO */}
+        {/* Checkpoints COM PROGRESSO */}
         <div className="space-y-1 mb-6">
           {checkpoints.map((checkpoint, index) => (
             <CheckpointWithLink
               key={index}
               label={checkpoint.label}
-              resources={checkpoint.resources} // ✅ CORRIGIDO: passa o objeto/array resources completo
+              resources={checkpoint.resources}
+              phaseNumber={number} // ✨ NOVO
+              checkpointIndex={index} // ✨ NOVO
+              checkboxProgress={checkboxProgress} // ✨ NOVO
             />
           ))}
         </div>
 
-        {/* Projeto - USA CSS VARIABLES */}
+        {/* Projeto */}
         {project && (
           <div
             className="border-l-4 p-6 rounded-r-lg"
