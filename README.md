@@ -193,7 +193,7 @@ guiadev/
 _Melhorias de UX:_
 
 - [x] LocalStorage para salvar progresso do usuário
-- [ ] Barra de progresso global
+- [x] Barra de progresso global
 - [ ] Analytics simples (visualizações por seção)
 - [ ] SEO avançado e meta tags otimizadas
 
