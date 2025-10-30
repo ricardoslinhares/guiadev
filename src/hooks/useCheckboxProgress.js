@@ -9,7 +9,7 @@ import { roadmapPhases } from '../data/roadmapData';
  * - Calcula progresso por fase e total
  * - Permite reset do progresso
  *
- * @returns {Object} Métodos e estado do progresso
+ * @returns {Object} MÃ©todos e estado do progresso
  */
 export function useCheckboxProgress() {
   // Estado: armazena status de todos os checkboxes
@@ -20,10 +20,10 @@ export function useCheckboxProgress() {
   const STORAGE_PREFIX = 'devguide_phase_';
 
   /**
-   * Gera chave única para identificar cada checkpoint
-   * @param {number} phaseNumber - Número da fase (1-4)
-   * @param {number} checkpointIndex - Índice do checkpoint (0-N)
-   * @returns {string} Chave única
+   * Gera chave Ãºnica para identificar cada checkpoint
+   * @param {number} phaseNumber - NÃºmero da fase (1-4)
+   * @param {number} checkpointIndex - Ãndice do checkpoint (0-N)
+   * @returns {string} Chave Ãºnica
    */
   const getCheckpointKey = (phaseNumber, checkpointIndex) => {
     return `${STORAGE_PREFIX}${phaseNumber}_checkpoint_${checkpointIndex}`;
@@ -50,10 +50,10 @@ export function useCheckboxProgress() {
   };
 
   /**
-   * Salva estado de um checkpoint específico
-   * @param {number} phaseNumber - Número da fase
-   * @param {number} checkpointIndex - Índice do checkpoint
-   * @param {boolean} isChecked - Se está marcado ou não
+   * Salva estado de um checkpoint especÃ­fico
+   * @param {number} phaseNumber - NÃºmero da fase
+   * @param {number} checkpointIndex - Ãndice do checkpoint
+   * @param {boolean} isChecked - Se estÃ¡ marcado ou nÃ£o
    */
   const saveCheckpoint = (phaseNumber, checkpointIndex, isChecked) => {
     const key = getCheckpointKey(phaseNumber, checkpointIndex);
@@ -66,13 +66,16 @@ export function useCheckboxProgress() {
       ...prev,
       [key]: isChecked,
     }));
+
+    // Dispara evento
+    window.dispatchEvent(new CustomEvent('progress-updated'));
   };
 
   /**
-   * Verifica se um checkpoint específico está marcado
-   * @param {number} phaseNumber - Número da fase
-   * @param {number} checkpointIndex - Índice do checkpoint
-   * @returns {boolean} True se marcado, false caso contrário
+   * Verifica se um checkpoint especÃ­fico estÃ¡ marcado
+   * @param {number} phaseNumber - NÃºmero da fase
+   * @param {number} checkpointIndex - Ãndice do checkpoint
+   * @returns {boolean} True se marcado, false caso contrÃ¡rio
    */
   const isCheckpointChecked = (phaseNumber, checkpointIndex) => {
     const key = getCheckpointKey(phaseNumber, checkpointIndex);
@@ -80,8 +83,8 @@ export function useCheckboxProgress() {
   };
 
   /**
-   * Calcula percentual de conclusão de uma fase específica
-   * @param {number} phaseNumber - Número da fase (1-4)
+   * Calcula percentual de conclusÃ£o de uma fase especÃ­fica
+   * @param {number} phaseNumber - NÃºmero da fase (1-4)
    * @returns {number} Percentual de 0 a 100
    */
   const calculatePhaseProgress = (phaseNumber) => {
@@ -97,7 +100,7 @@ export function useCheckboxProgress() {
   };
 
   /**
-   * Calcula percentual de conclusão total do roadmap
+   * Calcula percentual de conclusÃ£o total do roadmap
    * @returns {number} Percentual de 0 a 100
    */
   const calculateTotalProgress = () => {
@@ -119,7 +122,7 @@ export function useCheckboxProgress() {
   };
 
   /**
-   * Retorna contagem de checkpoints concluídos e total
+   * Retorna contagem de checkpoints concluÃ­dos e total
    * @returns {Object} { completed: number, total: number }
    */
   const getCheckpointCounts = () => {
@@ -144,13 +147,26 @@ export function useCheckboxProgress() {
    * Remove todos os dados do LocalStorage e reseta estado
    */
   const resetProgress = () => {
-    // Remove todas as chaves do LocalStorage que começam com nosso prefixo
+    // Remove todas as chaves do LocalStorage que comeÃ§am com nosso prefixo
     Object.keys(localStorage)
       .filter((key) => key.startsWith(STORAGE_PREFIX))
       .forEach((key) => localStorage.removeItem(key));
 
     // Reseta estado
     setProgress({});
+  };
+
+  /**
+   * Detecta milestone baseado no percentual
+   * @param {number} percentage - Percentual de 0 a 100
+   * @returns {string|null} 'quarter', 'half', 'three-quarters', 'complete' ou null
+   */
+  const detectMilestone = (percentage) => {
+    if (percentage === 100) return 'complete';
+    if (percentage >= 75) return 'three-quarters';
+    if (percentage >= 50) return 'half';
+    if (percentage >= 25) return 'quarter';
+    return null;
   };
 
   // useEffect: Carrega progresso ao montar o componente
@@ -162,10 +178,11 @@ export function useCheckboxProgress() {
   return {
     progress, // Estado completo
     saveCheckpoint, // Salvar checkpoint
-    isCheckpointChecked, // Verificar se está marcado
+    isCheckpointChecked, // Verificar se estÃ¡ marcado
     calculatePhaseProgress, // Calcular % de uma fase
     calculateTotalProgress, // Calcular % total
     getCheckpointCounts, // Obter contadores
+    detectMilestone, // Detectar milestone
     resetProgress, // Reset completo
   };
 }
