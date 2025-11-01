@@ -106,6 +106,27 @@ npm run build
 npm run preview
 ```
 
+### Configuração do Google Analytics (Opcional)
+
+O projeto está integrado com Google Analytics 4 para rastreamento de eventos e visualizações.
+
+**Para habilitar o GA4:**
+
+1. Crie uma propriedade GA4 em [Google Analytics](https://analytics.google.com/)
+2. Obtenha seu **Measurement ID** (formato: `G-XXXXXXXXXX`)
+3. Edite o arquivo `.env` na raiz do projeto:
+
+```env
+VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+```
+
+4. Reinicie o servidor de desenvolvimento
+
+**Para Deploy (Vercel):**
+- Adicione a variável de ambiente `VITE_GA_MEASUREMENT_ID` nas configurações do projeto
+
+**Nota:** O arquivo `.env` está protegido pelo `.gitignore` e não será enviado ao repositório.
+
 ---
 
 ## 📊 Estrutura do Projeto
@@ -208,7 +229,7 @@ _Melhorias de UX:_
 
 - [x] LocalStorage para salvar progresso do usuário
 - [x] Barra de progresso global
-- [ ] Analytics simples (visualizações por seção)
+- [x] Google Analytics 4 com rastreamento de eventos
 - [ ] SEO avançado e meta tags otimizadas
 
 #### 📚 v1.2.0 - Conteúdo Expandido

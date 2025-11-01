@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import { useTheme } from './hooks/useTheme';
+import { initGA, trackPageView } from './utils/analytics';
 import Header from './components/common/Header';
 import ProgressBar from './components/common/ProgressBar'; //
 import Hero from './components/sections/Hero';
@@ -11,6 +13,12 @@ import FloatingNav from './components/common/FloatingNav';
 function App() {
   // Hook de tema (dark/light)
   const { theme, toggleTheme, isDark } = useTheme();
+
+  // Inicializar Google Analytics
+  useEffect(() => {
+    initGA();
+    trackPageView(window.location.pathname);
+  }, []);
 
   return (
     <div className="App min-h-screen" style={{ backgroundColor: 'var(--bg-primary)' }}>
