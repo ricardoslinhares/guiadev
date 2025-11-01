@@ -115,26 +115,40 @@ guiadev/
 ├── src/
 │   ├── components/
 │   │   ├── common/          # Componentes reutilizáveis
-│   │   │   ├── Header.jsx
+│   │   │   ├── Card.jsx
+│   │   │   ├── CheckpointWithLink.jsx    # ✨ Checkpoints interativos
 │   │   │   ├── Footer.jsx
 │   │   │   ├── FloatingNav.jsx
-│   │   │   └── ...
+│   │   │   ├── Header.jsx
+│   │   │   ├── ProgressBar.jsx           # ✨ Barra de progresso global
+│   │   │   ├── ResourceCard.jsx
+│   │   │   ├── ResourceCategory.jsx
+│   │   │   ├── RoadmapPhase.jsx
+│   │   │   └── ThemeToggle.jsx
 │   │   └── sections/        # Seções da página
 │   │       ├── Hero.jsx
 │   │       ├── PorOndeComecar.jsx
 │   │       ├── Roadmap.jsx
 │   │       └── Recursos.jsx
 │   ├── hooks/               # Custom hooks
-│   │   └── useTheme.js
+│   │   ├── useTheme.js
+│   │   └── useCheckboxProgress.js        # ✨ Gerenciamento de progresso
 │   ├── data/                # Dados estruturados
 │   │   └── roadmapData.js
 │   ├── styles/              # Estilos globais
-│   │   ├── theme.css
-│   │   └── roadmap.css
+│   │   ├── colors.js
+│   │   ├── index.css
+│   │   ├── roadmap.css
+│   │   └── theme.css
+│   ├── assets/
 │   ├── App.jsx
 │   └── main.jsx
 ├── public/
 ├── index.html
+├── vite.config.js
+├── tailwind.config.js
+├── postcss.config.js
+├── eslint.config.js
 └── package.json
 ```
 
