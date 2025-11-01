@@ -77,7 +77,7 @@ function ProgressBar() {
 
   return (
     <div
-      className="sticky top-[64px] z-40 transition-all duration-300"
+      className="sticky top-[64px] z-40 transition-all duration-300 hidden md:block"
       style={{
         backgroundColor: 'var(--bg-secondary)',
         borderBottom: '1px solid var(--border-default)',
