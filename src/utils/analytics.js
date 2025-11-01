@@ -39,3 +39,7 @@ export const trackThemeChange = (theme) => {
 export const trackProgress = (percentage) => {
   trackEvent('Roadmap', 'Progresso Atualizado', `${percentage}%`, Math.round(percentage));
 };
+
+export const trackSectionView = (sectionName) => {
+  trackEvent('Navegação', 'Visualização de Seção', sectionName);
+};

@@ -1,6 +1,9 @@
 import { ChevronDown } from 'lucide-react';
+import { useSectionTracking } from '../../hooks/useSectionTracking';
 
 function Hero() {
+  const sectionRef = useSectionTracking('Hero');
+
   const scrollToPorOndeComecar = () => {
     const element = document.querySelector('#por-onde-comecar');
     if (element) {
@@ -17,6 +20,7 @@ function Hero() {
 
   return (
     <section
+      ref={sectionRef}
       id="inicio"
       className="relative overflow-hidden"
       style={{

@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Trophy, Zap } from 'lucide-react';
 import { roadmapPhases } from '../../data/roadmapData';
+import { trackProgress } from '../../utils/analytics';
 
 function ProgressBar() {
   const [data, setData] = useState({
@@ -9,6 +10,7 @@ function ProgressBar() {
     percentage: 0,
     milestone: null,
   });
+  const previousPercentage = useRef(0);
 
   // Calcular direto do localStorage
   const calculateFromLocalStorage = () => {
@@ -33,6 +35,12 @@ function ProgressBar() {
     else if (percentage >= 25) milestone = 'quarter';
 
     setData({ completed, total, percentage, milestone });
+
+    // Rastrear mudança de progresso (apenas quando percentual mudar)
+    if (percentage !== previousPercentage.current && percentage > 0) {
+      trackProgress(percentage);
+      previousPercentage.current = percentage;
+    }
   };
 
   useEffect(() => {

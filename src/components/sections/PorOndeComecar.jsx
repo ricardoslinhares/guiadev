@@ -1,4 +1,5 @@
 import { ArrowRight, Target, Zap, Rocket } from 'lucide-react';
+import { useSectionTracking } from '../../hooks/useSectionTracking';
 
 /**
  * Seção "Por Onde Começar?"
@@ -10,6 +11,7 @@ import { ArrowRight, Target, Zap, Rocket } from 'lucide-react';
  * - CORRIGIDO: Card "Mudança de Carreira" agora vai direto para Fase 4
  */
 function PorOndeComecar() {
+  const sectionRef = useSectionTracking('Por Onde Começar');
   const profiles = [
     {
       id: 'beginner',
@@ -76,7 +78,7 @@ function PorOndeComecar() {
   };
 
   return (
-    <section id="por-onde-comecar" className="py-16 md:py-24" style={{ backgroundColor: 'var(--bg-primary)' }}>
+    <section ref={sectionRef} id="por-onde-comecar" className="py-16 md:py-24" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">

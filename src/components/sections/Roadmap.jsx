@@ -1,17 +1,19 @@
 import RoadmapPhase from '../common/RoadmapPhase';
 import { roadmapPhases } from '../../data/roadmapData';
 import { useCheckboxProgress } from '../../hooks/useCheckboxProgress'; // ✨ NOVO IMPORT
+import { useSectionTracking } from '../../hooks/useSectionTracking';
 
 /**
  * Componente Roadmap
  * ✅ ATUALIZADO: Integrado com sistema de progresso LocalStorage
  */
 function Roadmap() {
+  const sectionRef = useSectionTracking('Roadmap');
   // ✨ NOVO: Inicializar hook de progresso
   const checkboxProgress = useCheckboxProgress();
 
   return (
-    <section id="roadmap" className="py-16 md:py-24" style={{ backgroundColor: 'var(--bg-tertiary)' }}>
+    <section ref={sectionRef} id="roadmap" className="py-16 md:py-24" style={{ backgroundColor: 'var(--bg-tertiary)' }}>
       <div className="max-w-5xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">

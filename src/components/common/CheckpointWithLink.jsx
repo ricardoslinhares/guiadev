@@ -1,5 +1,6 @@
 import { ExternalLink } from 'lucide-react';
 import { resourceMetadata } from '../../data/roadmapData';
+import { trackCheckpoint } from '../../utils/analytics';
 
 /**
  * Componente de Checkbox com Link para Recurso de Aprendizado
@@ -20,8 +21,11 @@ function CheckpointWithLink({
 
   // ✨ NOVO: Handler para mudança no checkbox
   const handleCheckboxChange = (e) => {
+    const checked = e.target.checked;
     if (checkboxProgress) {
-      checkboxProgress.saveCheckpoint(phaseNumber, checkpointIndex, e.target.checked);
+      checkboxProgress.saveCheckpoint(phaseNumber, checkpointIndex, checked);
+      // Rastrear evento no Google Analytics
+      trackCheckpoint(phaseNumber, label, checked);
     }
   };
 

@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import ResourceCard from '../common/ResourceCard';
+import { useSectionTracking } from '../../hooks/useSectionTracking';
 
 function Recursos() {
+  const sectionRef = useSectionTracking('Recursos');
   const [activeTab, setActiveTab] = useState('logica');
 
   const categories = {
@@ -136,7 +138,7 @@ function Recursos() {
   ];
 
   return (
-    <section id="recursos" className="py-16 md:py-24" style={{ backgroundColor: 'var(--bg-primary)' }}>
+    <section ref={sectionRef} id="recursos" className="py-16 md:py-24" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-12">
