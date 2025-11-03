@@ -2,33 +2,85 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- TÍTULO DA PÁGINA - ALTERADO -->
+    <!-- Título da página -->
     <title>GuiaDev - Guia de Sobrevivência para Devs Iniciantes</title>
 
-    <!-- Meta tags para SEO -->
+    <!-- Meta tags SEO básicas -->
     <meta name="description" content="Guia prático e direto para quem está começando a programar. Roadmap validado pela comunidade, recursos curados e sem excesso de informação." />
-    <meta name="keywords" content="programação, desenvolvimento, guia, iniciantes, roadmap, dev, desenvolvedor" />
-    <meta name="author" content="Ricardo Linhares" />
+    <meta name="keywords" content="programação, desenvolvimento, guia, iniciantes, roadmap, dev, desenvolvedor, aprender programar, lógica programação, primeira linguagem" />
+    <meta name="author" content="Ricardo Francisco de Souza Linhares" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta http-equiv="content-language" content="pt-BR" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://guiadev.vercel.app/" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://guiadev.vercel.app/" />
+    <meta property="og:site_name" content="GuiaDev" />
     <meta property="og:title" content="GuiaDev - Guia de Sobrevivência para Devs Iniciantes" />
-    <meta property="og:description" content="Guia prático e direto para quem está começando a programar. Roadmap validado pela comunidade." />
+    <meta property="og:description" content="Guia prático e direto para quem está começando a programar. Roadmap validado pela comunidade, recursos curados e sem excesso de informação." />
+    <meta property="og:image" content="https://guiadev.vercel.app/og-image.png" />
+    <meta property="og:image:alt" content="GuiaDev - Guia de Sobrevivência para Devs Iniciantes" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="article:author" content="Ricardo Francisco de Souza Linhares" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://guiadev.vercel.app/" />
-    <meta property="twitter:title" content="GuiaDev - Guia de Sobrevivência para Devs Iniciantes" />
-    <meta property="twitter:description" content="Guia prático e direto para quem está começando a programar." />
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://guiadev.vercel.app/" />
+    <meta name="twitter:title" content="GuiaDev - Guia de Sobrevivência para Devs Iniciantes" />
+    <meta name="twitter:description" content="Guia prático e direto para quem está começando a programar. Roadmap validado pela comunidade." />
+    <meta name="twitter:image" content="https://guiadev.vercel.app/og-image.png" />
+    <meta name="twitter:image:alt" content="GuiaDev - Guia de Sobrevivência para Devs Iniciantes" />
 
     <!-- Theme color para mobile -->
     <meta name="theme-color" content="#0f172a" />
+    <meta name="msapplication-TileColor" content="#0f172a" />
+
+    <!-- Preconnect para otimização -->
+    <link rel="preconnect" href="https://www.google-analytics.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+    <!-- Skip to main content (acessibilidade) -->
+    <style>
+      .skip-to-main {
+        position: absolute;
+        left: -10000px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+      .skip-to-main:focus {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: auto;
+        height: auto;
+        padding: 1rem;
+        background: #2563eb;
+        color: white;
+        z-index: 10000;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    </style>
   </head>
   <body>
+    <a href="#main-content" class="skip-to-main">Pular para conteúdo principal</a>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

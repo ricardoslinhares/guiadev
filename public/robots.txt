@@ -1,0 +1,21 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://guiadev.vercel.app/sitemap.xml
+
+# Googlebot específico
+User-agent: Googlebot
+Allow: /
+
+# Bloquear bots indesejados
+User-agent: AhrefsBot
+User-agent: SemrushBot
+User-agent: DotBot
+Disallow: /
+
+# Permitir crawlers de redes sociais
+User-agent: Twitterbot
+User-agent: facebookexternalhit
+Allow: /

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useTheme } from './hooks/useTheme';
 import { initGA, trackPageView } from './utils/analytics';
+import StructuredData from './components/common/StructuredData';
 import Header from './components/common/Header';
 import ProgressBar from './components/common/ProgressBar'; //
 import Hero from './components/sections/Hero';
@@ -22,9 +23,10 @@ function App() {
 
   return (
     <div className="App min-h-screen" style={{ backgroundColor: 'var(--bg-primary)' }}>
+      <StructuredData />
       <Header theme={theme} toggleTheme={toggleTheme} isDark={isDark} />
       <ProgressBar />
-      <main>
+      <main id="main-content" role="main">
         <Hero />
         <PorOndeComecar />
         <Roadmap />

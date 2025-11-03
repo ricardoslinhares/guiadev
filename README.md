@@ -5,7 +5,7 @@
 ### Guia de Sobrevivência para Desenvolvedores Iniciantes
 
 [![Deploy](https://img.shields.io/badge/deploy-success-brightgreen?style=flat-square)](https://guiadev.vercel.app)
-[![Version](https://img.shields.io/badge/version-1.0.0-blue?style=flat-square)](https://github.com/ricardoslinhares/guiadev/releases)
+[![Version](https://img.shields.io/badge/version-1.1.0-blue?style=flat-square)](https://github.com/ricardoslinhares/guiadev/releases)
 [![License](https://img.shields.io/badge/license-MIT-purple?style=flat-square)](LICENSE)
 
 **[🌐 Acessar o GuiaDev](https://guiadev.vercel.app)**
@@ -223,14 +223,14 @@ guiadev/
 
 > ⚠️ **Nota:** As versões abaixo são melhorias futuras **não essenciais**.
 
-#### 🔧 v1.1.0 - Experiência Aprimorada
+#### 🔧 v1.1.0 - Experiência Aprimorada ✅ COMPLETO
 
 _Melhorias de UX:_
 
 - [x] LocalStorage para salvar progresso do usuário
 - [x] Barra de progresso global
 - [x] Google Analytics 4 com rastreamento de eventos
-- [ ] SEO avançado e meta tags otimizadas
+- [x] SEO avançado e meta tags otimizadas
 
 #### 📚 v1.2.0 - Conteúdo Expandido
 

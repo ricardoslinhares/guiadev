@@ -3,6 +3,8 @@ import { Github, AlertCircle, Code2, Star } from 'lucide-react';
 function Footer() {
   return (
     <footer
+      role="contentinfo"
+      aria-label="Rodapé"
       className="py-12"
       style={{
         backgroundColor: 'var(--footer-bg)',

@@ -48,7 +48,7 @@ function FloatingNav() {
   return (
     <>
       {isVisible && (
-        <div className="fixed bottom-8 right-8 flex flex-col gap-3 z-50 hidden md:flex">
+        <nav role="navigation" aria-label="Navegação flutuante" className="fixed bottom-8 right-8 flex flex-col gap-3 z-50 hidden md:flex">
           {/* Botão: Por Onde Começar */}
           <button
             onClick={() => scrollToSection('por-onde-comecar')}
@@ -114,7 +114,7 @@ function FloatingNav() {
               Voltar ao Topo
             </span>
           </button>
-        </div>
+        </nav>
       )}
     </>
   );

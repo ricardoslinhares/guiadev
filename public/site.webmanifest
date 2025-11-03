@@ -1,0 +1,22 @@
+{
+  "name": "GuiaDev - Guia de Sobrevivência para Devs Iniciantes",
+  "short_name": "GuiaDev",
+  "description": "Guia prático e direto para quem está começando a programar",
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0f172a",
+  "background_color": "#0f172a",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/"
+}

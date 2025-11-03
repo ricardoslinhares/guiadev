@@ -23,6 +23,8 @@ function Header({ theme, toggleTheme, isDark }) {
 
   return (
     <header
+      role="banner"
+      aria-label="Navegação principal"
       className="sticky top-0 z-50 shadow-sm"
       style={{
         backgroundColor: 'var(--header-bg)',
