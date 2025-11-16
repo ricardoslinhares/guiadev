@@ -14,8 +14,8 @@ function RoadmapPhase({ number, title, description, checkpoints, project, checkb
     const checkMobile = () => {
       const mobile = window.innerWidth < 768;
       setIsMobile(mobile);
-      // Mobile: apenas primeira fase expandida
-      if (mobile && number > 1) {
+      // Mobile: todas as fases fechadas por padrão
+      if (mobile) {
         setExpanded(false);
       } else {
         setExpanded(true);
