@@ -5,7 +5,7 @@
 ### Guia de Sobrevivência para Desenvolvedores Iniciantes
 
 [![Deploy](https://img.shields.io/badge/deploy-success-brightgreen?style=flat-square)](https://guiadev.vercel.app)
-[![Version](https://img.shields.io/badge/version-1.1.0-blue?style=flat-square)](https://github.com/ricardoslinhares/guiadev/releases)
+[![Version](https://img.shields.io/badge/version-1.2.0-blue?style=flat-square)](https://github.com/ricardoslinhares/guiadev/releases)
 [![License](https://img.shields.io/badge/license-MIT-purple?style=flat-square)](LICENSE)
 
 **[🌐 Acessar o GuiaDev](https://guiadev.vercel.app)**
@@ -42,6 +42,9 @@ Um guia objetivo e curado que mostra:
 
 - 🎯 **Por Onde Começar** - 3 perfis de entrada personalizados
 - 🗺️ **Roadmap Progressivo** - 4 fases com checkpoints práticos
+- ⚠️ **Armadilhas Comuns** - Erros típicos e como evitá-los
+- 🚀 **Próximos Passos** - Orientação para o mercado de trabalho
+- ❓ **FAQ Interativo** - Respostas para dúvidas frequentes
 - 📚 **Recursos Curados** - Máximo 3 opções por tecnologia
 - 🌓 **Tema Dark/Light** - Alternância suave entre temas
 - 🧭 **Navegação Flutuante** - Atalhos rápidos para seções
@@ -150,7 +153,10 @@ guiadev/
 │   │       ├── Hero.jsx
 │   │       ├── PorOndeComecar.jsx
 │   │       ├── Roadmap.jsx
-│   │       └── Recursos.jsx
+│   │       ├── ArmadilhasComuns.jsx    # ✨ Armadilhas de iniciantes
+│   │       ├── ProximosPassos.jsx      # ✨ Carreira e mercado
+│   │       ├── Recursos.jsx
+│   │       └── FAQ.jsx                 # ✨ Perguntas frequentes
 │   ├── hooks/               # Custom hooks
 │   │   ├── useTheme.js
 │   │   └── useCheckboxProgress.js        # ✨ Gerenciamento de progresso
@@ -201,9 +207,9 @@ guiadev/
 
 ## 📈 Roadmap do Projeto
 
-### ✅ v1.0.0 - MVP Completo (Atual)
+### ✅ v1.0.0 - MVP Completo
 
-> **Status:** Produção | **Objetivo:** Atividade Extensionista IPOG
+> **Objetivo:** Atividade Extensionista IPOG
 
 **Funcionalidades Core:**
 
@@ -232,11 +238,11 @@ _Melhorias de UX:_
 - [x] Google Analytics 4 com rastreamento de eventos
 - [x] SEO avançado e meta tags otimizadas
 
-#### 📚 v1.2.0 - Conteúdo Expandido
+#### 📚 v1.2.0 - Conteúdo Expandido ✅ COMPLETO
 
-- [ ] Seção "Armadilhas Comuns" (tutorial hell, síndrome do impostor)
-- [ ] Seção "Próximos Passos" (mercado de trabalho, entrevistas)
-- [ ] FAQ interativo com dúvidas frequentes
+- [x] Seção "Armadilhas Comuns" (tutorial hell, síndrome do impostor)
+- [x] Seção "Próximos Passos" (mercado de trabalho, entrevistas)
+- [x] FAQ interativo com dúvidas frequentes
 
 #### 🚀 v2.0.0 - Evolução Completa
 

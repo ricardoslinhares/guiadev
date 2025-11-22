@@ -3,11 +3,14 @@ import { useTheme } from './hooks/useTheme';
 import { initGA, trackPageView } from './utils/analytics';
 import StructuredData from './components/common/StructuredData';
 import Header from './components/common/Header';
-import ProgressBar from './components/common/ProgressBar'; //
+import ProgressBar from './components/common/ProgressBar';
 import Hero from './components/sections/Hero';
 import PorOndeComecar from './components/sections/PorOndeComecar';
 import Roadmap from './components/sections/Roadmap';
+import ArmadilhasComuns from './components/sections/ArmadilhasComuns';
+import ProximosPassos from './components/sections/ProximosPassos';
 import Recursos from './components/sections/Recursos';
+import FAQ from './components/sections/FAQ';
 import Footer from './components/common/Footer';
 import FloatingNav from './components/common/FloatingNav';
 
@@ -30,7 +33,10 @@ function App() {
         <Hero />
         <PorOndeComecar />
         <Roadmap />
+        <ArmadilhasComuns />
+        <ProximosPassos />
         <Recursos />
+        <FAQ />
       </main>
       <Footer />
       <FloatingNav />

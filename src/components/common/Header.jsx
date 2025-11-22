@@ -42,7 +42,7 @@ function Header({ theme, toggleTheme, isDark }) {
 
           {/* Desktop Nav + Theme Toggle */}
           <div className="hidden md:flex items-center gap-6">
-            <nav className="flex gap-8">
+            <nav className="flex gap-6">
               <a
                 href="#inicio"
                 onClick={(e) => scrollToSection(e, '#inicio')}
@@ -68,6 +68,18 @@ function Header({ theme, toggleTheme, isDark }) {
                 Roadmap
               </a>
               <a
+                href="#armadilhas"
+                onClick={(e) => scrollToSection(e, '#armadilhas')}
+                className="font-medium transition-colors"
+                style={{
+                  color: 'var(--header-text)',
+                }}
+                onMouseEnter={(e) => (e.target.style.color = 'var(--primary)')}
+                onMouseLeave={(e) => (e.target.style.color = 'var(--header-text)')}
+              >
+                Armadilhas
+              </a>
+              <a
                 href="#recursos"
                 onClick={(e) => scrollToSection(e, '#recursos')}
                 className="font-medium transition-colors"
@@ -78,6 +90,18 @@ function Header({ theme, toggleTheme, isDark }) {
                 onMouseLeave={(e) => (e.target.style.color = 'var(--header-text)')}
               >
                 Recursos
+              </a>
+              <a
+                href="#faq"
+                onClick={(e) => scrollToSection(e, '#faq')}
+                className="font-medium transition-colors"
+                style={{
+                  color: 'var(--header-text)',
+                }}
+                onMouseEnter={(e) => (e.target.style.color = 'var(--primary)')}
+                onMouseLeave={(e) => (e.target.style.color = 'var(--header-text)')}
+              >
+                FAQ
               </a>
             </nav>
 
@@ -103,8 +127,14 @@ function Header({ theme, toggleTheme, isDark }) {
             <a href="#roadmap" onClick={(e) => scrollToSection(e, '#roadmap')} className="font-medium py-2 transition-colors" style={{ color: 'var(--header-text)' }}>
               Roadmap
             </a>
+            <a href="#armadilhas" onClick={(e) => scrollToSection(e, '#armadilhas')} className="font-medium py-2 transition-colors" style={{ color: 'var(--header-text)' }}>
+              Armadilhas
+            </a>
             <a href="#recursos" onClick={(e) => scrollToSection(e, '#recursos')} className="font-medium py-2 transition-colors" style={{ color: 'var(--header-text)' }}>
               Recursos
+            </a>
+            <a href="#faq" onClick={(e) => scrollToSection(e, '#faq')} className="font-medium py-2 transition-colors" style={{ color: 'var(--header-text)' }}>
+              FAQ
             </a>
           </nav>
         )}
