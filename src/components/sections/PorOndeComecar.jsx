@@ -91,7 +91,7 @@ function PorOndeComecar() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8">
           {profiles.map((profile) => {
             const IconComponent = profile.icon;
 
