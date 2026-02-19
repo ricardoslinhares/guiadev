@@ -98,7 +98,7 @@ function PorOndeComecar() {
             return (
               <div
                 key={profile.id}
-                className="rounded-2xl p-8 transition-all duration-300 cursor-pointer group border-2"
+                className="rounded-2xl p-8 transition-all duration-300 cursor-pointer group border-2 h-full flex flex-col"
                 style={{
                   backgroundColor: 'var(--bg-secondary)',
                   borderColor: 'var(--border-default)',
@@ -142,60 +142,62 @@ function PorOndeComecar() {
                   {profile.description}
                 </p>
 
-                {/* Detalhes - Layout vertical melhorado */}
-                <div className="p-5 rounded-xl mb-6 space-y-4" style={{ backgroundColor: 'var(--bg-tertiary)' }}>
-                  {/* Início */}
-                  <div className="pb-3 border-b" style={{ borderColor: 'var(--border-default)' }}>
-                    <div className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: 'var(--text-tertiary)' }}>
-                      Início
+                <div className="mt-auto">
+                  {/* Detalhes - Layout vertical melhorado */}
+                  <div className="p-5 rounded-xl mb-6 space-y-4" style={{ backgroundColor: 'var(--bg-tertiary)' }}>
+                    {/* Início */}
+                    <div className="pb-3 border-b" style={{ borderColor: 'var(--border-default)' }}>
+                      <div className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: 'var(--text-tertiary)' }}>
+                        Início
+                      </div>
+                      <div className="text-base font-semibold" style={{ color: 'var(--text-accent)' }}>
+                        {profile.phase}
+                      </div>
                     </div>
-                    <div className="text-base font-semibold" style={{ color: 'var(--text-accent)' }}>
-                      {profile.phase}
+
+                    {/* Recurso */}
+                    <div className="pb-3 border-b" style={{ borderColor: 'var(--border-default)' }}>
+                      <div className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: 'var(--text-tertiary)' }}>
+                        Recurso Recomendado
+                      </div>
+                      <div className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                        {profile.resource}
+                      </div>
+                    </div>
+
+                    {/* Tempo */}
+                    <div>
+                      <div className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: 'var(--text-tertiary)' }}>
+                        Tempo Estimado
+                      </div>
+                      <div className="text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>
+                        {profile.timeEstimate}
+                      </div>
                     </div>
                   </div>
 
-                  {/* Recurso */}
-                  <div className="pb-3 border-b" style={{ borderColor: 'var(--border-default)' }}>
-                    <div className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: 'var(--text-tertiary)' }}>
-                      Recurso Recomendado
-                    </div>
-                    <div className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                      {profile.resource}
-                    </div>
-                  </div>
-
-                  {/* Tempo */}
-                  <div>
-                    <div className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: 'var(--text-tertiary)' }}>
-                      Tempo Estimado
-                    </div>
-                    <div className="text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>
-                      {profile.timeEstimate}
-                    </div>
-                  </div>
+                  {/* Botão CTA */}
+                  <button
+                    className="w-full py-3 px-6 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300"
+                    style={{
+                      backgroundColor: profile.colorButton,
+                      color: 'white',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'scale(1.05)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'scale(1)';
+                    }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleScrollTo(profile.scrollTo);
+                    }}
+                  >
+                    {profile.action}
+                    <ArrowRight size={20} />
+                  </button>
                 </div>
-
-                {/* Botão CTA */}
-                <button
-                  className="w-full py-3 px-6 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300"
-                  style={{
-                    backgroundColor: profile.colorButton,
-                    color: 'white',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'scale(1.05)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'scale(1)';
-                  }}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleScrollTo(profile.scrollTo);
-                  }}
-                >
-                  {profile.action}
-                  <ArrowRight size={20} />
-                </button>
               </div>
             );
           })}
